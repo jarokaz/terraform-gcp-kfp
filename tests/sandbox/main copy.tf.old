@@ -1,0 +1,42 @@
+variable "service_accounts" {
+  default = [
+    {
+      account_id = "gke-sa"
+      roles      = [
+        "logging.logWriter",
+        "monitoring.metricWriter", 
+        "monitoring.viewer", 
+        "stackdriver.resourceMetadata.writer",
+        "storage.objectViewer"
+      ]
+    },
+    {
+      account_id = "kfp-sa"
+      roles      = [
+        "storage.admin", 
+        "bigquery.admin", 
+        "automl.admin", 
+        "automl.predictor",
+        "ml.admin",
+        "dataflow.admin"
+      ]
+    }
+  ]
+}
+
+
+locals {
+  account_to_role = flatten([
+    for account in var.service_accounts: [ 
+      for role in account.roles: {
+          account_id = account.account_id
+          role       = role
+      }
+    ]
+  ])
+  account_ids = [
+    for account in var.service_accounts: {
+      account.account_id
+    }
+  ]
+}

@@ -6,7 +6,7 @@ provider "google" {
     project   = "jk-demo1"
 }
 
-module "kfp" {
+module "kfp_infra" {
     source           = "../"
     project_id       = "jk-demo1"
     vpc_name         = "kfp-vpc"
