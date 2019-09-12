@@ -1,11 +1,11 @@
-variable "cluster_name" {
+variable "name" {
     description = "The name of the GKE cluster"
-    default     = "kfp-gke-cluster"
+    type        = string
 }
 
-variable "cluster_description" {
+variable "description" {
     description = "The cluster's description"
-    default = "KFP cluster"
+    type        = string
 }
 
 variable "location" {
@@ -13,16 +13,34 @@ variable "location" {
     type        = string
 }
 
-variable "cluster_node_count" {
+variable "sa_full_id" {
+    description = "The cluster's service account full ID"
+}
+
+variable "network" {
+    description = "The name of the network to which the cluster is connected"
+}
+
+variable "subnetwork" {
+    description = "The name of the subnetwork to which the cluster is connected"
+}
+
+variable "ip_range_pods" {
+    description = "The name of the secondary IP range for pods"
+}
+
+variable "ip_range_services" {
+    description = "The name of the secondary IP range for services"
+}
+
+variable "node_count" {
     description = "The cluster's node count"
     default     = 3
 }
 
-variable "cluster_node_type" {
+variable "node_type" {
     description = "The cluster's node type"
     default     = "n1-standard-1"
 }
 
-variable "cluster_sa_id" {
-    description = "The cluster's service account ID"
-}
+

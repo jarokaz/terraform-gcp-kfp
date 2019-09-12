@@ -1,20 +1,25 @@
 # Create a GKE cluster 
 
-resource "google_container_cluster" "kfp_cluster" {
-  name               = var.cluster_name
-  location           = var.region
-  description        = var.cluster_description
+resource "google_container_cluster" "gke_cluster" {
+  name               = var.name
+  location           = var.location
+  description        = var.description
+  network            = var.network
+  subnetwork         = var.subnetwork     
+  initial_node_count = var.node_count
 
-  initial_node_count = var.cluster_node_count
-
+  ip_allocation_policy {
+    cluster_secondary_range_name  = var.ip_range_pods
+    services_secondary_range_name = var.ip_range_services
+  }
   node_config {
-    machine_type = var.cluster_node_type
+    machine_type = var.node_type
 
     metadata = {
       disable-legacy-endpoints = "true"
     }
 
-    service_account = google_service_account.cluster_sa.email
+    service_account = var.sa_full_id
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
