@@ -10,7 +10,7 @@ The module provisions:
 - A service account and IAM roles to be used by KFP pipelines
 
 ## Usage
-Basic usage is as follows. For a more complete example refer to the (https://github.com/jarokaz/caip-tfx).
+Basic usage is as follows. 
 
 ```
 module "gcp-kfp-infrastructure" {
@@ -26,7 +26,9 @@ The main module utilizes utilizes a set of standalone submodules.
 `modules/service`- The module creates a service account and associated roles
 `modules/mysql` - The module creates an MVP instance of MySQL based Cloud SQL. For security reasons the instance is created without any users.
 
-The submodules can be directly if you require a different topology or naming than configured by the main module.
+The submodules can be used directly if you require a different topology or naming than configured by the main module.
+
+The module does not install Kubeflow Pipelines into the created GKE cluster. It is assumed that KFP will be installed and configured by the downstream process.
 
 
 ## Inputs
