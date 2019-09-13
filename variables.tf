@@ -41,6 +41,7 @@ variable "kfp_service_account_roles" {
     "automl.admin", 
     "automl.predictor",
     "ml.admin",
-    "dataflow.admin"
+    "dataflow.admin",
+    "cloudsql.admin"
   ]
 }
