@@ -39,7 +39,11 @@ The module does not install Kubeflow Pipelines into the created GKE cluster. It 
 |name_prefix|The name prefix to be added to resource names|string|n\a|yes|
 |cluster_node_count|The number of nodes in the default node pool. |string|`3`|no|
 |cluster_node_type|The type of nodes in the default node pool.|string|`n1-standard-1`|no|
-|gke_service_account_roles|The roles to assign to the GKE Service Account|list(string)|`["logging.logWriter", "monitoring.metricWriter",  "monitoring.viewer", "stackdriver.resourceMetadata.writer","storage.objectViewer" ]`|no|
+|gke_service_account_roles|The roles to assign to the GKE Service Account|list(string)|`["logging.logWriter",
+ "monitoring.metricWriter", 
+ "monitoring.viewer", 
+"stackdriver.resourceMetadata.writer",
+"storage.objectViewer" ]`|no|
 |kfp_service_account_roles|The roles to assign to the KFP Service Account|list(string)|`["storage.admin", "bigquery.admin",  "automl.admin", "automl.predictor", "ml.admin"]`|no|
 
 
