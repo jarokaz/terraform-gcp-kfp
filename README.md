@@ -21,10 +21,10 @@ module "gcp-kfp-infrastructure" {
 ```
 
 The main module utilizes utilizes a set of standalone submodules. 
-`modules/vpc` - The module creates an MVP VPC 
-`modules/gke` - The module creates an MVP GKE cluster
-`modules/service`- The module creates a service account and associated roles
-`modules/mysql` - The module creates an MVP instance of MySQL based Cloud SQL. For security reasons the instance is created without any users.
+- `modules/vpc` - The module creates an MVP VPC 
+- `modules/gke` - The module creates an MVP GKE cluster
+- `modules/service`- The module creates a service account and associated roles
+- `modules/mysql` - The module creates an MVP instance of MySQL based Cloud SQL. For security reasons the instance is created without any users.
 
 The submodules can be used directly if you require a different topology or naming than configured by the main module.
 
