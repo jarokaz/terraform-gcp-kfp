@@ -1,9 +1,9 @@
 
-output "ip_range_pods_name" {
-    value = "${var.name_prefix}-ip-range-pods"
+output "pods_ip_range_name" {
+    value = var.pods_ip_range_name
 }
-output "ip_range_services_name" {
-    value = "${var.name_prefix}-ip-range-services"
+output "services_ip_range_name" {
+    value = var.services_ip_range_name
 }
 
 output "subnet_name" {

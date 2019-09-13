@@ -3,26 +3,26 @@ terraform {
 }
 
 resource "google_compute_network" "network" {
-  name                    = "${var.name_prefix}-network"
+  name                    = var.network_name
   auto_create_subnetworks = "false"
   routing_mode            = "REGIONAL"
 }
 
 resource "google_compute_subnetwork" "subnetwork" {
-  name                     = "${var.name_prefix}-subnet"
+  name                     = var.subnet_name
   region                   = var.region
   network                  = google_compute_network.network.self_link
   ip_cidr_range            = var.subnet_ip_range
   private_ip_google_access = true
 
   secondary_ip_range {
-    range_name =    "${var.name_prefix}-ip-range-pods"
-    ip_cidr_range = var.ip_range_pods
+    range_name =    var.pods_ip_range_name
+    ip_cidr_range = var.pods_ip_range
   }
   
   secondary_ip_range {
-    range_name =    "${var.name_prefix}-ip-range-services"
-    ip_cidr_range = var.ip_range_services
+    range_name =    var.services_ip_range_name
+    ip_cidr_range = var.services_ip_range
   }
   
 }

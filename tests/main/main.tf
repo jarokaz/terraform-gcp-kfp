@@ -6,8 +6,7 @@ terraform {
 module "kfp_infra" {
     source                    = "../.."
     project_id                = "jk-demo1"
-    name_prefix               = "caip-dev"
+    name_prefix               = "caip-dev1"
     region                    = "us-central1"
-    ml_metadata_instance_name = "mlmetadata-sql1" 
 }
 
