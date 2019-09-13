@@ -1,5 +1,5 @@
 # GCP infrastructure for a lightweight Kubeflow Pipelines deployment 
-This is an Terraform module that manages provisioning and configuration of MVP GCP infrastructure to host a lightweight Kubeflow Pipelines deployment.
+This is a Terraform module that manages provisioning and configuration of MVP GCP infrastructure to host a lightweight Kubeflow Pipelines deployment.
 
 The module provisions:
 - A VPC to host a KFP GKE cluster
