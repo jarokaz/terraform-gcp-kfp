@@ -19,5 +19,5 @@ variable "subnet_name" {
 
 variable "subnet_ip_range" {
   description = "The IP address range for the subnet"
-  default     = "10.128.0.0/20"
+  default     = "10.128.0.0/14"
 }
