@@ -14,5 +14,4 @@ resource "google_compute_subnetwork" "subnetwork" {
   network                  = google_compute_network.network.self_link
   ip_cidr_range            = var.subnet_ip_range
   private_ip_google_access = true
-
-  }
+}
