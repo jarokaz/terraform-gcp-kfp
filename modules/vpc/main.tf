@@ -15,14 +15,4 @@ resource "google_compute_subnetwork" "subnetwork" {
   ip_cidr_range            = var.subnet_ip_range
   private_ip_google_access = true
 
-  secondary_ip_range {
-    range_name =    var.pods_ip_range_name
-    ip_cidr_range = var.pods_ip_range
   }
-  
-  secondary_ip_range {
-    range_name =    var.services_ip_range_name
-    ip_cidr_range = var.services_ip_range
-  }
-  
-}
