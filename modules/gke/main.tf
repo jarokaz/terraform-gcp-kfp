@@ -9,8 +9,8 @@ resource "google_container_cluster" "gke_cluster" {
   initial_node_count = var.node_count
 
   ip_allocation_policy {
-    cluster_ipv4_cidr_block  = "/14"
-    services_ipv4_cidr_block = "/14"
+    cluster_ipv4_cidr_block  = "/16"
+    services_ipv4_cidr_block = "/16"
   }
   
   node_config {
