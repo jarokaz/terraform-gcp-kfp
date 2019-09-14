@@ -29,8 +29,6 @@ module "kfp_gke_vpc" {
   region                 = var.region
   network_name           = "${var.name_prefix}-network"
   subnet_name            = "${var.name_prefix}-subnet"
-  pods_ip_range_name     = "${var.name_prefix}-ip-range-pods"
-  services_ip_range_name = "${var.name_prefix}-ip-range-services"
 }
 
 # Create the KFP GKE cluster
@@ -42,8 +40,6 @@ module "kfp_gke_cluster" {
   sa_full_id             = module.gke_service_account.service_account.email
   network                = module.kfp_gke_vpc.network_name
   subnetwork             = module.kfp_gke_vpc.subnet_name
-  pods_ip_range_name     = module.kfp_gke_vpc.pods_ip_range_name
-  services_ip_range_name = module.kfp_gke_vpc.services_ip_range_name
   node_count             = var.cluster_node_count
   node_type              = var.cluster_node_type
 }
