@@ -15,3 +15,9 @@ variable "subnet_name" {
   type        = string
 }
 
+# Optional variables
+
+variable "subnet_ip_range" {
+  description = "The IP address range for the subnet"
+  default     = "10.128.0.0/20"
+}
