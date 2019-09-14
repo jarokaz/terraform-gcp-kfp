@@ -25,13 +25,6 @@ variable "subnetwork" {
     description = "The name of the subnetwork to which the cluster is connected"
 }
 
-variable "pods_ip_range_name" {
-    description = "The name of the secondary IP range for pods"
-}
-
-variable "services_ip_range_name" {
-    description = "The name of the secondary IP range for services"
-}
 
 variable "node_count" {
     description = "The cluster's node count"
