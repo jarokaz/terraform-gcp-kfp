@@ -9,9 +9,10 @@ resource "google_container_cluster" "gke_cluster" {
   initial_node_count = var.node_count
 
   ip_allocation_policy {
-    cluster_secondary_range_name  = var.pods_ip_range_name
-    services_secondary_range_name = var.services_ip_range_name
+    cluster_ipv4_cidr_block  = "/14"
+    services_ipv4_cidr_block = "/14"
   }
+  
   node_config {
     machine_type = var.node_type
 
