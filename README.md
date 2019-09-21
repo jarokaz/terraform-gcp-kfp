@@ -36,6 +36,7 @@ The module does not install Kubeflow Pipelines into the created GKE cluster. It 
 |----|-----------|----|-------|--------|
 |project_id|The project ID of a hosting project|string|n/a|yes|
 |region|The region for the infrastructure|string|n/a|yes|
+|zone|The zone for the GKE cluster. If not set the regional cluster will be created|string|""|no|
 |name_prefix|The name prefix to be added to resource names|string|n\a|yes|
 |cluster_node_count|The number of nodes in the default node pool. |string|`3`|no|
 |cluster_node_type|The type of nodes in the default node pool.|string|`n1-standard-1`|no|
