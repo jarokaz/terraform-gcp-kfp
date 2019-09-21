@@ -26,7 +26,7 @@ module "kfp_service_account" {
 # Create the VPC for the KFP cluster
 module "kfp_gke_vpc" {
   source                 = "./modules/vpc"
-  region                 = var.region
+  region                 = var.zone != "" ? var.zone : var.region
   network_name           = "${var.name_prefix}-network"
   subnet_name            = "${var.name_prefix}-subnet"
 }

@@ -8,6 +8,12 @@ variable "region" {
     type        = string
 }
 
+variable "zone" {
+    description = "The zone for the GKE cluster. If not the regional cluster will be created"
+    type        = string
+    default     = ""
+}
+
 variable "name_prefix" {
     description = "The name prefix for the resources"
     type        = string
