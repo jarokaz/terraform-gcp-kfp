@@ -3,5 +3,5 @@ output "cluster_endpoint" {
 }
   
 output "mysql_instance_name" {
-  value = module.mysql.mysql_instance.name
+  value = module.ml_metadata_mysql.mysql_instance.name
 }
