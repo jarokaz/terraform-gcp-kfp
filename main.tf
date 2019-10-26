@@ -18,7 +18,7 @@ module "gke_service_account" {
 # Create the KFP service account 
 module "kfp_service_account" {
   source                       = "./modules/service_account"
-  service_account_id           = "${var.name_prefix}-kfp-cluster"
+  service_account_id           = "${var.name_prefix}-kfp-sa"
   service_account_display_name = "The KFP service account"
   service_account_roles        = var.kfp_service_account_roles
 }
