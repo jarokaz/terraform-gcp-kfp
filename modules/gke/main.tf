@@ -27,6 +27,10 @@ resource "google_container_cluster" "gke_cluster" {
       "https://www.googleapis.com/auth/monitoring",
       "https://www.googleapis.com/auth/cloud-platform",
     ]
+    
+    autoscaling {
+      min_node_count = 1
+      max_node_count = 3
   }
 
 }
