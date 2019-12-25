@@ -31,6 +31,7 @@ resource "google_container_cluster" "gke_cluster" {
     autoscaling {
       min_node_count = 1
       max_node_count = 3
+    }
   }
 
 }
